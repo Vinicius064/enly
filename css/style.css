@@ -242,6 +242,17 @@ header.bg nav ul li a::after{
     color: #fff;
 }
 
+#varredura{
+    padding: var(--height-nav) 0;
+}
+#varredura h2{
+    color: var(--color-primary);
+}
+#varredura img{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 #vantagens{
     padding: var(--height-nav) 0;
     background: var(--color-tertiary);
