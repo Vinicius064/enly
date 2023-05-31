@@ -23,6 +23,31 @@ $('.avaliacoes').slick({
     ]
 });
 
+$('.cases').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    prevArrow: '',
+    nextArrow: '',
+    responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+            breakpoint: 520,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+        }
+    ]
+});
+
 $(window).on('scroll',()=>{
     if($(window).scrollTop() > 30){
         $('header').addClass('bg');

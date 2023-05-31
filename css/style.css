@@ -2,7 +2,7 @@
 :root{
     --color-primary: #a6dbed;
     --color-secondary: #8cc4d1;
-    --color-secondary: #f35b5a;
+    /*--color-secondary: #f35b5a;*/
     --color-tertiary: #f6f6f6;
     --height-nav: 50px;
 }
@@ -404,9 +404,31 @@ header.bg nav ul li a::after{
     color: var(--color-primary);
 }
 
+#cases{
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--height-nav) 0;
+    text-align: center;
+}
+#cases img{
+    width: 200px;
+    max-width: 100%;
+}
+#cases .case{
+    min-height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #institucional{
     padding: var(--height-nav) 0;
     background: var(--color-tertiary);
+}
+#institucional svg{
+    color: var(--color-primary);
+    width: 15px;
+    height: 15px;
 }
 #institucional .container > div{
     display: flex;
