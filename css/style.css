@@ -48,6 +48,7 @@ a.button{
     background: var(--color-primary);
     color: #fff;
     font-weight: 600;
+    text-align: center;
     padding: 10px 20px;
     border: 0;
     border-radius: 50px;
@@ -82,7 +83,7 @@ a.button{
 }
 .slick-prev, .slick-next{
     position: absolute;
-    top: 50%;
+    top: calc(50% + 53px);
     background: transparent;
     padding: 0;
     z-index: 2;
@@ -194,6 +195,28 @@ header.bg nav ul li a::after{
     max-width: 550px;
 }
 
+#plataformas{
+    text-align: center;
+    background: var(--color-tertiary);
+}
+#plataformas .container{
+    padding: var(--height-nav) 0;
+}
+#plataformas .plataformas{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+#plataformas .plataformas .plataforma img{
+    width: 100%;
+}
+#plataformas .plataformas .plataforma{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
 #passos{
     padding: var(--height-nav) 0;
     text-align: center;
@@ -253,36 +276,76 @@ header.bg nav ul li a::after{
     margin: 0 auto;
 }
 
-#vantagens{
+#problemas{
     padding: var(--height-nav) 0;
-    background: var(--color-tertiary);
+    /*background: var(--color-tertiary);*/
 }
-#vantagens img{
+#problemas img{
     max-width: 400px;
     display: block;
     margin: 0 auto;
 }
-#vantagens h2{
+#problemas h2{
     color: var(--color-primary);
 }
-#vantagens .col-md-6:first-child svg{
+#problemas .col-md-6:first-child svg{
     width: 100%;
 }
-#vantagens .vantagem{
+#problemas .vantagem{
     display: flex;
     align-items: center;
     margin-top: 16px;
 }
-#vantagens .vantagem svg{
+#problemas .vantagem svg{
     color: var(--color-primary);
-    min-width: 35px;
+    min-width: 50px;
     margin-right: 15px;
 }
-#vantagens .vantagem h5{
+#problemas .vantagem h5{
     margin-bottom: 5px;
 }
-#vantagens .vantagem p{
+#problemas .vantagem p{
     margin: 0;
+}
+
+#implementacoes{
+    background: var(--color-primary);
+    padding: var(--height-nav) 0;
+}
+#implementacoes h2{
+    text-align: center;
+    color: #fff;
+}
+#implementacoes .container > h5{
+    text-align: center;
+    color: #fff;
+}
+#implementacoes .implementacao .preco small{
+    color: #868686;
+    font-size: 11px;
+}
+#implementacoes .implementacao{
+    padding: 20px;
+}
+#implementacoes .implementacao > div{
+    background: #fff;
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center;
+}
+#implementacoes .implementacao .img{
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+#implementacoes .implementacao .de{
+    text-decoration: line-through;
+    color: #868686;
+}
+#implementacoes .implementacao a{
+    margin-top: 10px;
 }
 
 #clientes{
@@ -323,11 +386,18 @@ header.bg nav ul li a::after{
 #avaliacoes .container{
     position: relative;
 }
+#avaliacoes h2{
+    color: var(--color-primary);
+    text-align: center;
+}
+#avaliacoes h6{
+    text-align: center;
+}
 #avaliacoes .avaliacoes{
     display: flex;
 }
 #avaliacoes .avaliacoes > div{
-    padding-top: 60px;
+    margin-top: 60px;
 }
 #avaliacoes .avaliacoes .avaliacao{
     background: var(--color-primary);
@@ -337,6 +407,9 @@ header.bg nav ul li a::after{
     padding: 50px 20px 20px;
     padding: 20px;
     position: relative;
+}
+#avaliacoes .avaliacoes .avaliacao a{
+    color: #fff;
 }
 #avaliacoes .avaliacoes .avaliacao > div > svg{
     width: 50px;
@@ -556,7 +629,8 @@ footer{
         background-color: var(--color-primary);
     }
 
-    #inicio h1{
+    #inicio h1,
+    #inicio p{
         min-width: 0;
         text-align: center;
     }
@@ -568,15 +642,15 @@ footer{
         max-width: 100%;
     }
 
-    #vantagens h5{
+    #problemas h5{
         font-size: 18px;
     }
-    #vantagens .vantagem{
+    #problemas .vantagem{
         flex-direction: column;
         text-align: center;
         margin-top: 25px;
     }
-    #vantagens .vantagem svg{
+    #problemas .vantagem svg{
         margin: 0 0 10px;
     }
 
