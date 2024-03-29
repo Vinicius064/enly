@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root{
-    --color-primary: #a6dbed;
-    --color-secondary: #8cc4d1;
+    --color-primary: #5bbe66;
+    --color-secondary: #74da7f;
     /*--color-secondary: #f35b5a;*/
     --color-tertiary: #f6f6f6;
-    --height-nav: 50px;
+    --height-nav: 70px;
 }
 body::-webkit-scrollbar {
     width: 16px;
@@ -23,6 +23,14 @@ body,html{
     overflow-x: hidden;
     font-family: poppins;
     color: #2c2c2c;
+}
+section{
+    padding: var(--height-nav) 0;
+}
+section h2{
+    color: var(--color-primary);
+    text-align: center;
+    font-weight: 600;
 }
 img{
     height: auto;
@@ -45,13 +53,19 @@ li{
 button,
 a.button{
     display: inline-block;
-    background: var(--color-primary);
+    background: linear-gradient(to right, var(--color-primary),var(--color-secondary),var(--color-primary));
+    background-size: 164%;
     color: #fff;
     font-weight: 600;
     text-align: center;
     padding: 10px 20px;
     border: 0;
-    border-radius: 50px;
+    border-radius: 9px;
+    transition: .3s;
+}
+button:hover,
+a.button:hover{
+    background-position-x: right;
 }
 
 #btn-back-to-top {
@@ -61,7 +75,8 @@ a.button{
     display: none;
     padding: 15px;
     border-radius: 50%;
-    box-shadow: 0 0 10px 2px #fff;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.1);
+    background: var(--color-primary);
     z-index: 2;
 }
 #btn-whatsapp{
@@ -113,10 +128,7 @@ header{
     background: #fff;
     height: var(--height-nav);
     transition: .3s;
-}
-header.bg{
-    background: var(--color-primary);
-    height: var(--height-nav);
+    box-shadow: 0 0 13px -3px rgba(0,0,0,.3);
 }
 header nav,
 header nav ul{
@@ -128,9 +140,6 @@ header nav svg{
     display: none;
     color: var(--color-primary);
 }
-header.bg nav svg{
-    color: #fff;
-}
 header nav{
     height: 100%;
 }
@@ -141,41 +150,78 @@ header nav .logo img{
 header nav ul li a{
     display: block;
     padding: 10px;
-    color: var(--color-primary);
     font-weight: 500;
     font-size: 15px;
     text-decoration: none;
     position: relative;
-}
-header nav ul li a::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: var(--color-primary);
-    width: 0;
-    height: 2px;
     transition: .3s;
 }
-header nav ul li a:hover::after,
-header nav ul li a.selected::after{
-    opacity: 1;
+header nav ul li a:hover{
+    color: var(--color-primary);
+}
+
+.wave-1{
+    position: relative;
+}
+.wave-1 .container{
+    position: relative;
+    z-index: 2;
+}
+
+.circle-1{
+    position: relative;
+    width: calc(100% - 40px);
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+}
+.circle-1::after{
+    content: '';
+    background: var(--color-primary);
+    border-radius: 57% 43% 75% 45%;
+    transform: rotate(28deg);
+    position: absolute;
+    top: -8px;
+    left: 0;
     width: 100%;
+    height: 100%;
+    z-index: 1;
 }
-header.bg nav ul li a{
-    color: #fff;
+.circle-1 > div{
+    border-radius: 57% 43% 75% 45%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    max-height: 300px;
 }
-header.bg nav ul li a::after{
-    background-color: #fff;
+.circle-1 > div img{
+    width: 125%;
+}
+
+.gota-1{
+    position: absolute;
+    left: -12px;
+    z-index: 3;
+    width: 93px;
+    opacity: .6;
+}
+.gota-2{
+    position: absolute;
+    bottom: 24px;
+    right: 45px;
+    z-index: 3;
+    width: 40px;
+    opacity: .6;
 }
 
 #inicio{
     min-height: 600px;
-    padding: var(--height-nav) 0;
+    
+    background: var(--color-tertiary);
     display: flex;
     align-items: center;
     position: relative;
-    background: url('../imgs/inicio-fundo.svg') no-repeat;
     background-size: 85px;
     background-position-y: 60px;
     background-position-x: 20px;
@@ -183,110 +229,70 @@ header.bg nav ul li a::after{
 #inicio h1{
     font-weight: 700;
     min-width: 460px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 #inicio h1 b{
     color: var(--color-primary);
     text-shadow: 0 8px 15px rgba(0,0,0,.1);
 }
-#inicio img,
-#inicio svg{
+#inicio li{
+    margin-bottom: 7px;
+}
+#inicio .col-md-6:first-child svg{
+    width: 18px;
+    height: 18px;
+}
+#inicio .col-md-6:last-child img,
+#inicio .col-md-6:last-child svg{
     position: absolute;
     bottom: 20px;
-    max-width: 550px;
+    max-height: 500px;
+    border-radius: 10px;
 }
 
 #plataformas{
     text-align: center;
-    background: var(--color-tertiary);
-}
-#plataformas .container{
-    padding: var(--height-nav) 0;
 }
 #plataformas .plataformas{
     display: flex;
     justify-content: space-around;
     position: relative;
 }
-#plataformas .plataformas .plataforma img{
-    width: 100%;
-}
 #plataformas .plataformas .plataforma{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 20px;
+    height: 30px;
+    margin-top: 35px;
+}
+#plataformas .plataformas .plataforma img{
+    filter: brightness(0);
+    opacity: .5;
+    max-height: 30px;
+    width: auto;
+    max-width: 100%;
 }
 
-#passos{
-    padding: var(--height-nav) 0;
-    text-align: center;
+#sobre-nos{
     background: var(--color-tertiary);
 }
-#passos h2{
-    font-weight: 600;
+#sobre-nos h2{
+    font-weight: 700;
+    margin: 0;
 }
-#passos p{
-    opacity: .8;
-    margin-bottom: 40px;
-}
-#passos .passos{
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-}
-#passos .passos:before{
-    content: '';
-    position: absolute;
-    top: 50px;
-    width: 80%;
-    border-top: 1px dashed var(--color-primary);
-}
-#passos .passos .passo > div{
-    box-shadow: 0 8px 15px 0px rgba(0,0,0,.1);
-    background: var(--color-primary);
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 2;
-}
-#passos .passos .passo{
-    padding: 0 20px;
-}
-#passos .passos .passo:hover{
-    cursor: pointer;
-}
-#passos .passos .passo > div svg{
-    color: #fff;
-}
-
-#varredura{
-    padding: var(--height-nav) 0;
-}
-#varredura h2{
+#sobre-nos em{
     color: var(--color-primary);
-}
-#varredura img{
-    max-width: 400px;
-    margin: 0 auto;
+    font-weight: 700;
+    margin-bottom: 16px;
 }
 
-#problemas{
-    padding: var(--height-nav) 0;
-    /*background: var(--color-tertiary);*/
-}
 #problemas img{
     max-width: 400px;
     display: block;
     margin: 0 auto;
-}
-#problemas h2{
-    color: var(--color-primary);
 }
 #problemas .col-md-6:first-child svg{
     width: 100%;
@@ -308,44 +314,58 @@ header.bg nav ul li a::after{
     margin: 0;
 }
 
-#implementacoes{
+#precos{
     background: var(--color-primary);
-    padding: var(--height-nav) 0;
 }
-#implementacoes h2{
+#precos h2{
+    color: #fff;
+}
+#precos .container > h5{
     text-align: center;
     color: #fff;
 }
-#implementacoes .container > h5{
+#precos .preco > div > div > small{
+    color: #868686;
+    display: block;
     text-align: center;
-    color: #fff;
+    margin-bottom: 10px;
 }
-#implementacoes .implementacao .preco small{
+#precos .preco .valor{
+    text-align: center;
+    margin: 10px 0 0;
+}
+#precos .preco .valor small{
     color: #868686;
     font-size: 11px;
 }
-#implementacoes .implementacao{
+#precos .preco{
     padding: 20px;
 }
-#implementacoes .implementacao > div{
+#precos .preco > div{
     background: #fff;
     padding: 20px;
     border-radius: 7px;
-    text-align: center;
 }
-#implementacoes .implementacao .img{
+#precos .preco > div b{
+    display: block;
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 17px;
+}
+#precos .preco .img{
     display: block;
     width: 100%;
     max-width: 150px;
     margin: 0 auto;
     margin-bottom: 15px;
 }
-#implementacoes .implementacao .de{
+#precos .preco .de{
     text-decoration: line-through;
     color: #868686;
 }
-#implementacoes .implementacao a{
-    margin-top: 10px;
+#precos .preco a{
+    margin-top: 15px;
+    display: block;
 }
 
 #clientes{
@@ -380,122 +400,22 @@ header.bg nav ul li a::after{
     color: var(--color-primary);
 }
 
-#avaliacoes{
-    padding: var(--height-nav) 0;
-}
-#avaliacoes .container{
-    position: relative;
-}
-#avaliacoes h2{
-    color: var(--color-primary);
-    text-align: center;
-}
-#avaliacoes h6{
-    text-align: center;
-}
-#avaliacoes .avaliacoes{
-    display: flex;
-}
-#avaliacoes .avaliacoes > div{
-    margin-top: 60px;
-}
-#avaliacoes .avaliacoes .avaliacao{
-    background: var(--color-primary);
-    color: #fff;
-    border-radius: 10px;
-    margin: 0 10px;
-    padding: 50px 20px 20px;
-    padding: 20px;
-    position: relative;
-}
-#avaliacoes .avaliacoes .avaliacao a{
-    color: #fff;
-}
-#avaliacoes .avaliacoes .avaliacao > div > svg{
-    width: 50px;
-    height: 50px;
-}
-#avaliacoes .avaliacoes .avaliacao > div > div{
-    display: flex;
-    justify-content: center;
-}
-#avaliacoes .avaliacoes .avaliacao > div > div svg{
-    margin: 0 3px;
-}
-#avaliacoes .avaliacoes .avaliacao .img{
-    display: none;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto;
-    position: absolute;
-    top: -50px;
-    left: calc(50% - 60px);
-}
-#avaliacoes .avaliacoes .avaliacao .img img{
-    width: 100%
-}
-
-#pacotes{
-    padding: var(--height-nav) 0;
-    text-align: center;
-}
-#pacotes p{
-    opacity: .8;
-    margin-bottom: 40px;
-}
-#pacotes .pacotes{
-    display: flex;
-    justify-content: space-around;
-}
-#pacotes .pacotes .pacote{
-    border: 1px solid var(--color-primary);
-    border-radius: 20px;
-    padding: 20px;
-    width: 100%;
-}
-#pacotes .pacotes .pacote:nth-child(2){
-    margin: 0 40px;
-}
-#pacotes .pacotes .pacote h4{
-    font-size: 16px;
-}
-#pacotes .pacotes .pacote h3{
-    color: var(--color-primary);
-    font-size: 20px;
-}
-#pacotes .pacotes .pacote h3 b{
-    font-size: 25px;
-}
-#pacotes .pacotes .pacote .vantagens{
-    text-align: left;
-    margin: 20px 0;
-}
-#pacotes .pacotes .pacote .vantagens svg{
-    color: var(--color-primary);
-}
-
 #cases{
-    background: var(--color-primary);
-    color: #fff;
-    padding: var(--height-nav) 0;
     text-align: center;
 }
-#cases img{
-    width: 200px;
-    max-width: 100%;
-}
-#cases .case{
-    min-height: 90px;
+.cases{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+}
+.cases a{
+    padding: 10px;
+    width: 33.3333%;
+}
+.cases a img{
+    width: 100%;
 }
 
 #institucional{
-    padding: var(--height-nav) 0;
     background: var(--color-tertiary);
 }
 #institucional svg{
@@ -622,12 +542,6 @@ footer{
     header nav svg{
         display: inline-block;
     }
-    header.bg nav ul li a{
-        color: var(--color-primary);
-    }
-    header.bg nav ul li a::after{
-        background-color: var(--color-primary);
-    }
 
     #inicio h1,
     #inicio p{
@@ -637,7 +551,7 @@ footer{
     #inicio a{
         margin: 0 auto;
     }
-    #inicio img, #inicio svg{
+    #inicio .col-md-6:last-child img, #inicio .col-md-6:last-child svg{
         position: static;
         max-width: 100%;
     }
