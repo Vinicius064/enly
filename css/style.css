@@ -33,7 +33,7 @@ section h2{
     font-weight: 600;
 }
 img{
-    height: auto;
+    width: 100%;
 }
 a{
     text-decoration: none;
@@ -248,6 +248,7 @@ header nav ul li a:hover{
 #inicio .col-md-6:last-child svg{
     position: absolute;
     bottom: 20px;
+    width: auto;
     max-height: 500px;
     border-radius: 10px;
 }
@@ -274,6 +275,12 @@ header nav ul li a:hover{
     max-height: 30px;
     width: auto;
     max-width: 100%;
+}
+
+#integracoes img{
+    width: auto;
+    height: 100%;
+    max-height: 470px;
 }
 
 #sobre-nos{
