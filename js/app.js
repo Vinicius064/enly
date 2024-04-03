@@ -1,28 +1,3 @@
-$('.avaliacoes').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    prevArrow: '.prev-avaliacoes',
-    nextArrow: '.next-avaliacoes',
-    responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-            breakpoint: 615,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-        }
-    ]
-});
-
 $('.plataformas').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -47,30 +22,23 @@ $('.plataformas').slick({
         }
     ]
 });
-$('.implementacoes').slick({
-    slidesToShow: 4,
+$('.precos').slick({
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    prevArrow: '.prev-implementacoes',
-    nextArrow: '.next-implementacoes',
+    prevArrow: '.prev-precos',
+    nextArrow: '.next-precos',
     responsive: [
         {
           breakpoint: 991,
           settings: {
-            slidesToShow: 3,
+            slidesToShow: 2,
             slidesToScroll: 1
           }
         },
         {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 520,
+            breakpoint: 768,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
