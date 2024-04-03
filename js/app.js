@@ -47,13 +47,13 @@ $('.plataformas').slick({
         }
     ]
 });
-$('.precos').slick({
-    slidesToShow: 3,
+$('.implementacoes').slick({
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    prevArrow: '.prev-precos',
-    nextArrow: '.next-precos',
+    prevArrow: '.prev-implementacoes',
+    nextArrow: '.next-implementacoes',
     responsive: [
         {
           breakpoint: 991,
