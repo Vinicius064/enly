@@ -283,7 +283,7 @@ header nav ul li a:hover{
 #vantagens .vantagens{
     display: flex;
     flex-wrap: wrap;
-    margin: -20px;
+    margin: -10px;
 }
 #vantagens .vantagens .vantagem{
     width: calc(33.3333333% - 20px);
@@ -583,6 +583,10 @@ footer{
         font-size: 230px;
     }
 
+    #vantagens .vantagens .vantagem{
+        width: calc(50% - 20px);
+        padding: 10px;
+    }
     #institucional .container > div{
         flex-wrap: wrap;
     }
@@ -615,6 +619,14 @@ footer{
     }
     #passos .passos .passo:first-child{
         margin-bottom: 40px;
+    }
+
+    #vantagens .vantagens .vantagem{
+        padding: 0;
+    }
+    #vantagens .vantagens b,
+    #vantagens .vantagens p{
+        font-size: 12px;
     }
 
     #clientes{
